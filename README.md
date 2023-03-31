@@ -1,18 +1,16 @@
 <img align="left" width="175" height="175" src="./images/LROSE_logo_small.png">
 
-# AMS 2023 LROSE Workshop
+# LROSE Science Gateway
 
 ### Background
-This repository contains all the notebooks and parameter files for tutorials from the 2023 LROSE workshop before the AMS Annual Meeting in Denver, CO.
-The tutorials will go over a few key LROSE workflows, showing how to use frequently used applications and highlighting key parameters. Tutorials can be downloaded after the workshop for use on a local machine, although paths may need to be edited. The tutorials are in the form of Jupyter notebooks.
+This repository contains all the notebooks and parameter files for tutorials that will be hosted on the LROSE Science Gateway on Jetstream2.
+The current tutorials will go over a few key LROSE workflows, showing how to use frequently used applications and highlighting key parameters. Tutorials can be downloaded after the workshop for use on a local machine, although paths may need to be edited. The tutorials are in the form of Jupyter notebooks.
 
 ### Requirements
 
-All tutorials during the AMS workshop will run on a JupyterHub server provided by Unidata. All that is required is a laptop or tablet running a modern web browser (e.g., Chrome, Firefox) that can connect to the internet. 
-
 Running the tutorials on a local machine will require the Jupyter notebook interface. The notebooks are tested to run with the Topaz release of LROSE.
 
-### Tutorials:
+### Current Tutorials:
 
 * Echo
     * RadxRate_tutorial.ipynb
@@ -33,4 +31,4 @@ Running the tutorials on a local machine will require the Jupyter notebook inter
 
 ### Acknowledgements
 
-We would like to thank Julien Chastang and Ana Espinoza for their assistance setting up the JupyterHub server. The JupyterHub server is a part of Unidata's Science Gateway (`https://doi.org/10.5065/688s-2w73`). 
+We would like to thank Brenda Javornik, Julien Chastang, and Ana Espinoza for their assistance. 
