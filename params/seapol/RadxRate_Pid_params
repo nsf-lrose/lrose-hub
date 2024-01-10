@@ -336,7 +336,7 @@ PID_sounding_search_time_margin_secs = 86400;
 // Type: string
 //
 
-PID_sounding_location_name = "SEAPOL";
+PID_sounding_location_name = "SEAP";
 
 ///////////// PID_sounding_check_pressure_range ///////
 //
