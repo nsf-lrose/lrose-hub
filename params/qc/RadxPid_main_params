@@ -272,6 +272,29 @@ LDR_field_name = "LDR";
 //
 //======================================================================
  
+///////////// KDP_available ///////////////////////////
+//
+// Is KDP data available?.
+//
+// If KDP is available, then it is not computed. Instead KDP_field_name 
+//   will be read in.
+//
+//
+// Type: boolean
+//
+
+KDP_available = FALSE;
+
+///////////// KDP_field_name //////////////////////////
+//
+// Field name for KDP.
+//
+//
+// Type: string
+//
+
+KDP_field_name = "KDP";
+
 ///////////// KDP_params_file_path ////////////////////
 //
 // Path for parameters for computing KDP.
@@ -356,7 +379,12 @@ PID_use_attenuation_corrected_fields = TRUE;
 // 	DBZ_ATTEN_CORRECTION: DBZ attenuation correction (dB)
 // 	ZDR_ATTEN_CORRECTION: ZDR attenuation correction (dB)
 // 	DBZ_ATTEN_CORRECTED: DBZ corrected for attenuation (dBZ)
-// 	ZDR_ATTEN_CORRECTED: ZDR corrected for attenuation (dB).
+// 	ZDR_ATTEN_CORRECTED: ZDR corrected for attenuation (dB)
+// do_write: allows you to turn off writing while leaving the field in 
+//   the list
+//
+// censor_non_weather: use PID field to censor non-weather PID types - 
+//   see non_weather_pid_types[] below.
 //
 //
 // Type: struct
@@ -377,6 +405,7 @@ PID_use_attenuation_corrected_fields = TRUE;
 //      string standard_name;
 //      string units;
 //      boolean do_write;
+//      boolean censor_non_weather;
 //   }
 //
 // 1D array - variable length.
@@ -389,7 +418,8 @@ output_fields = {
     long_name = "particle_id",
     standard_name = "hydrometeor_type",
     units = "",
-    do_write = TRUE
+    do_write = TRUE,
+    censor_non_weather = FALSE
   }
   ,
   {
@@ -398,7 +428,8 @@ output_fields = {
     long_name = "final_interest_value_for_pid_decision",
     standard_name = "final_interest_value_for_pid_decision",
     units = "",
-    do_write = FALSE
+    do_write = FALSE,
+    censor_non_weather = FALSE
   }
   ,
   {
@@ -407,7 +438,8 @@ output_fields = {
     long_name = "temperature_for_computing_pid",
     standard_name = "temperature",
     units = "C",
-    do_write = FALSE
+    do_write = FALSE,
+    censor_non_weather = FALSE
   }
   ,
   {
@@ -416,7 +448,8 @@ output_fields = {
     long_name = "specific_differential_phase",
     standard_name = "specific_differential_phase_hv",
     units = "deg/km",
-    do_write = TRUE
+    do_write = TRUE,
+    censor_non_weather = FALSE
   }
   ,
   {
@@ -425,7 +458,8 @@ output_fields = {
     long_name = "kdp_conditioned_using_ZZDR_self_consistency",
     standard_name = "specific_differential_phase_hv",
     units = "deg/km",
-    do_write = FALSE
+    do_write = FALSE,
+    censor_non_weather = FALSE
   }
   ,
   {
@@ -434,7 +468,8 @@ output_fields = {
     long_name = "correction_to_zdr_for_attenuation",
     standard_name = "zdr_attenuation_correction",
     units = "dB",
-    do_write = FALSE
+    do_write = FALSE,
+    censor_non_weather = FALSE
   }
   ,
   {
@@ -443,7 +478,8 @@ output_fields = {
     long_name = "dbz_corrected_for_attenuation",
     standard_name = "dbz_corrected_for_attenuation",
     units = "dBZ",
-    do_write = FALSE
+    do_write = FALSE,
+    censor_non_weather = FALSE
   }
   ,
   {
@@ -452,7 +488,8 @@ output_fields = {
     long_name = "zdr_corrected_for_attenuation",
     standard_name = "zdr_corrected_for_attenuation",
     units = "dB",
-    do_write = FALSE
+    do_write = FALSE,
+    censor_non_weather = FALSE
   }
 };
 
@@ -495,8 +532,10 @@ copy_selected_input_fields_to_output = TRUE;
 //
 // These fields are copied through unchanged to the output file.
 //
-// You can change the name of the field on output. Optionally you can 
-//   censor the non-weather echoes, based on the PID.
+// You can change the name of the field on output.
+//
+// censor_non_weather: use PID field to censor non-weather PID types - 
+//   see non_weather_pid_types[] below.
 //
 //
 // Type: struct
@@ -539,6 +578,58 @@ copy_fields = {
     output_name = "NCP",
     censor_non_weather = TRUE
   }
+};
+
+//======================================================================
+//
+// SPECIFY NON-WEATHER TYPES FROM PID.
+//
+// This section allows you to specify the PID particle types to be used 
+//   to censor non-weather echoes.
+//
+//======================================================================
+ 
+///////////// non_weather_pid_types ///////////////////
+//
+// List of non-weather types to be censored.
+//
+// This list applies to the fields for which censor_non_weather is set 
+//   to true. You can consider adding CLOUD to the list if, for example, 
+//   the CLOUD type finds Bragg echo instead of cloud.
+//
+//
+// Type: enum
+// Options:
+//     CLOUD
+//     DRIZZLE
+//     LIGHT_RAIN
+//     MODERATE_RAIN
+//     HEAVY_RAIN
+//     HAIL
+//     RAIN_HAIL_MIXTURE
+//     GRAUPEL_SMALL_HAIL
+//     GRAUPEL_RAIN
+//     DRY_SNOW
+//     WET_SNOW
+//     ICE_CRYSTALS
+//     IRREG_ICE_CRYSTALS
+//     SUPERCOOLED_DROPS
+//     FLYING_INSECTS
+//     SECOND_TRIP
+//     GROUND_CLUTTER
+//     SATURATED_SNR
+//     CHAFF
+//     MISC
+// 1D array - variable length.
+//
+
+non_weather_pid_types = {
+ FLYING_INSECTS,
+ SECOND_TRIP,
+ GROUND_CLUTTER,
+ SATURATED_SNR,
+ CHAFF,
+ MISC
 };
 
 //======================================================================
@@ -645,6 +736,36 @@ append_year_dir_to_output_dir = FALSE;
 //
 
 output_format = OUTPUT_FORMAT_CFRADIAL;
+
+//======================================================================
+//
+// SET MAX RANGE - OPTIONAL.
+//
+// If set, all rays will be truncated at this range.
+//
+//======================================================================
+ 
+///////////// set_max_range ///////////////////////////
+//
+// Option to set the max range for any ray.
+//
+//
+// Type: boolean
+//
+
+set_max_range = FALSE;
+
+///////////// max_range_km ////////////////////////////
+//
+// Specified maximim range - km.
+//
+// Gates beyond this range are removed.
+//
+//
+// Type: double
+//
+
+max_range_km = 9999;
 
 //======================================================================
 //
