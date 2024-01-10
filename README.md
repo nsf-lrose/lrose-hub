@@ -15,6 +15,8 @@ Running the tutorials on a local machine will require the Jupyter notebook inter
 * Echo
     * RadxRate_tutorial.ipynb
       * RadxRate, Grib2toMdv, Mdv2SoundingSpdb, RadxConvert
+    * SEAPOL_RadxRate_tutorial.ipynb
+      * RadxRate
 * QC
     * QC_tutorial.ipynb
       * RadxPid, RadxRate, RadxQc
@@ -28,7 +30,8 @@ Running the tutorials on a local machine will require the Jupyter notebook inter
 * Ting-Yu Cha (Colorado State University)
 * Michael Bell (Colorado State University)
 * Mike Dixon (National Center for Atmospheric Research)
+* Brenda Dolan (Colorado State University)
 
 ### Acknowledgements
 
-We would like to thank Brenda Javornik, Julien Chastang, and Ana Espinoza for their assistance. 
+We would like to thank Brenda Javornik from NCAR and Julien Chastang and Ana Espinoza from Unidata for their assistance. 
