@@ -306,7 +306,7 @@ KDP_field_name = "KDP";
 // Type: string
 //
 
-KDP_params_file_path = "$(BASE_DIR)params/seapol/RadxRate_Kdp_params";
+KDP_params_file_path = "$(BASE_DIR)/params/seapol/RadxRate_Kdp_params";
 
 //======================================================================
 //
@@ -325,7 +325,7 @@ KDP_params_file_path = "$(BASE_DIR)params/seapol/RadxRate_Kdp_params";
 // Type: string
 //
 
-PID_params_file_path = "$(BASE_DIR)params/seapol/RadxRate_Pid_params";
+PID_params_file_path = "$(BASE_DIR)/params/seapol/RadxRate_Pid_params";
 
 ///////////// PID_use_KDP_self_consistency ////////////
 //
@@ -372,7 +372,7 @@ PID_use_attenuation_corrected_fields = TRUE;
 // Type: string
 //
 
-RATE_params_file_path = "$(BASE_DIR)params/seapol/RadxRate_rate_params";
+RATE_params_file_path = "$(BASE_DIR)/params/seapol/RadxRate_rate_params";
 
 ///////////// RATE_use_KDP_self_consistency ///////////
 //
