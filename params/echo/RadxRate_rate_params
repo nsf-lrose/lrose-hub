@@ -23,9 +23,7 @@
 //
 // If the SNR at a gate is below this, the PRECIP is censored.
 //
-//
 // Type: double
-//
 
 RATE_snr_threshold = 3;
 
@@ -35,9 +33,7 @@ RATE_snr_threshold = 3;
 //
 // The filter is computed in rang..
 //
-//
 // Type: boolean
-//
 
 RATE_apply_median_filter_to_DBZ = TRUE;
 
@@ -47,9 +43,7 @@ RATE_apply_median_filter_to_DBZ = TRUE;
 //
 // See 'RATE_apply_median_filter_to_DBZ'.
 //
-//
 // Type: int
-//
 
 RATE_DBZ_median_filter_len = 5;
 
@@ -59,9 +53,7 @@ RATE_DBZ_median_filter_len = 5;
 //
 // The filter is computed in range.
 //
-//
 // Type: boolean
-//
 
 RATE_apply_median_filter_to_ZDR = TRUE;
 
@@ -71,9 +63,7 @@ RATE_apply_median_filter_to_ZDR = TRUE;
 //
 // See 'PID_RATE_apply_median_filter_to_ZDR'.
 //
-//
 // Type: int
-//
 
 RATE_ZDR_median_filter_len = 5;
 
@@ -83,9 +73,7 @@ RATE_ZDR_median_filter_len = 5;
 //
 // If any computed rate is less than this value, it is set to 0.
 //
-//
 // Type: double
-//
 
 RATE_min_valid_rate = 0.1;
 
@@ -95,9 +83,7 @@ RATE_min_valid_rate = 0.1;
 //
 // If any computed rate exceeds this value, it is set to this max.
 //
-//
 // Type: double
-//
 
 RATE_max_valid_rate = 250;
 
@@ -108,9 +94,7 @@ RATE_max_valid_rate = 250;
 // If any dbz exceeds this value, it is set to this max before use. This 
 //   helps mitigate large DBZ values in hail.
 //
-//
 // Type: double
-//
 
 RATE_max_valid_dbz = 53;
 
@@ -118,12 +102,12 @@ RATE_max_valid_dbz = 53;
 //
 // Correction to be applied in brightband before computing precip rate.
 //
-// This should be negative.
+// This is used for computing rate in wet snow or mixed precip. This 
+//   should be negative.
 //
 // Maximum val: 0
 //
 // Type: double
-//
 
 RATE_brightband_dbz_correction = -10;
 
@@ -147,9 +131,7 @@ RATE_brightband_dbz_correction = -10;
 //
 // Coefficient for RATE_ZH.
 //
-//
 // Type: double
-//
 
 RATE_zh_aa = 0.027366;
 
@@ -157,9 +139,7 @@ RATE_zh_aa = 0.027366;
 //
 // Exponent for RATE_ZH.
 //
-//
 // Type: double
-//
 
 RATE_zh_bb = 0.69444;
 
@@ -175,9 +155,7 @@ RATE_zh_bb = 0.69444;
 //
 // Coefficient for RATE_ZH in SNOW.
 //
-//
 // Type: double
-//
 
 RATE_zh_aa_snow = 0.0365;
 
@@ -185,9 +163,7 @@ RATE_zh_aa_snow = 0.0365;
 //
 // Exponent for RATE_ZH in SNOW.
 //
-//
 // Type: double
-//
 
 RATE_zh_bb_snow = 0.625;
 
@@ -203,9 +179,7 @@ RATE_zh_bb_snow = 0.625;
 //
 // Coefficient for RATE_ZZDR.
 //
-//
 // Type: double
-//
 
 RATE_zzdr_aa = 0.0067;
 
@@ -213,9 +187,7 @@ RATE_zzdr_aa = 0.0067;
 //
 // ZH exponent for RATE_ZZDR.
 //
-//
 // Type: double
-//
 
 RATE_zzdr_bb = 0.927;
 
@@ -223,9 +195,7 @@ RATE_zzdr_bb = 0.927;
 //
 // ZDR exponent for RATE_ZZDR.
 //
-//
 // Type: double
-//
 
 RATE_zzdr_cc = -3.43;
 
@@ -241,19 +211,15 @@ RATE_zzdr_cc = -3.43;
 //
 // Coefficient for RATE_KDP.
 //
-//
 // Type: double
-//
 
-RATE_kdp_aa = 44.0;
+RATE_kdp_aa = 44;
 
 ///////////// RATE_kdp_bb /////////////////////////////
 //
 // Exponent for RATE_KDP.
 //
-//
 // Type: double
-//
 
 RATE_kdp_bb = 0.822;
 
@@ -270,9 +236,7 @@ RATE_kdp_bb = 0.822;
 //
 // Coefficient for RATE_KDP_ZDR.
 //
-//
 // Type: double
-//
 
 RATE_kdpzdr_aa = 90.8;
 
@@ -280,9 +244,7 @@ RATE_kdpzdr_aa = 90.8;
 //
 // KDP exponent for RATE_KDP_ZDR.
 //
-//
 // Type: double
-//
 
 RATE_kdpzdr_bb = 0.93;
 
@@ -290,9 +252,7 @@ RATE_kdpzdr_bb = 0.93;
 //
 // ZDR exponent for RATE_KDP_ZDR.
 //
-//
 // Type: double
-//
 
 RATE_kdpzdr_cc = -2.86;
 
@@ -332,9 +292,7 @@ RATE_kdpzdr_cc = -2.86;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_pid_rate_kdp_threshold = 0.3;
 
@@ -351,7 +309,7 @@ RATE_pid_rate_kdp_threshold = 0.3;
 // 	    if KDP > threhsold and rateKDP is valid
 // 	      use RATE_KDP
 // 	    else
-// 	      use RATE_KDP
+// 	      use RATE_ZZDR
 // 	  else if snow/ice
 // 	    use RATE_ZH_SNOW
 // 	  else if mixed precip
@@ -364,9 +322,9 @@ RATE_pid_rate_kdp_threshold = 0.3;
 // 	        use RATE_ZZDR
 // 	    else
 // 	      if ZDR >= threshold
-// 	        use RATE_Z
+// 	        use RATE_ZZDR
 // 	      else
-// 	        use RATE_ZZDR.
+// 	        use RATE_Z.
 //
 //======================================================================
  
@@ -376,9 +334,7 @@ RATE_pid_rate_kdp_threshold = 0.3;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_hybrid_dbz_threshold = 40;
 
@@ -388,9 +344,7 @@ RATE_hybrid_dbz_threshold = 40;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_hybrid_kdp_threshold = 0.3;
 
@@ -400,9 +354,7 @@ RATE_hybrid_kdp_threshold = 0.3;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_hybrid_zdr_threshold = 0.5;
 
@@ -445,9 +397,7 @@ RATE_hybrid_zdr_threshold = 0.5;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_hidro_dbz_threshold = 38;
 
@@ -457,9 +407,7 @@ RATE_hidro_dbz_threshold = 38;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_hidro_kdp_threshold = 0.3;
 
@@ -469,9 +417,7 @@ RATE_hidro_kdp_threshold = 0.3;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_hidro_zdr_threshold = 0.5;
 
@@ -501,9 +447,7 @@ RATE_hidro_zdr_threshold = 0.5;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_bringi_dbz_threshold = 40;
 
@@ -513,9 +457,7 @@ RATE_bringi_dbz_threshold = 40;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_bringi_kdp_threshold = 0.15;
 
@@ -525,9 +467,7 @@ RATE_bringi_kdp_threshold = 0.15;
 //
 // See notes above for details on use.
 //
-//
 // Type: double
-//
 
 RATE_bringi_zdr_threshold = 0.1;
 

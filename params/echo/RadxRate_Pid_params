@@ -20,9 +20,7 @@
 // This file contains the thresholds and weights for computing particle 
 //   ID.
 //
-//
 // Type: string
-//
 
 PID_thresholds_file_path = "$(BASE_DIR)/params/echo/Pid_thresholds.sband.shv.txt";
 
@@ -32,9 +30,7 @@ PID_thresholds_file_path = "$(BASE_DIR)/params/echo/Pid_thresholds.sband.shv.txt
 //
 // If the SNR at a gate is below this, the PID is censored.
 //
-//
 // Type: double
-//
 
 PID_snr_threshold = 3;
 
@@ -45,9 +41,7 @@ PID_snr_threshold = 3;
 // If the SNR at a gate is above this value, the PID will be set to 
 //   SATURATED_SNR = 18.
 //
-//
 // Type: double
-//
 
 PID_snr_upper_threshold = 9999;
 
@@ -58,9 +52,7 @@ PID_snr_upper_threshold = 9999;
 // If the computed interest value is below this, the PID is set to 
 //   missing.
 //
-//
 // Type: double
-//
 
 PID_min_valid_interest = 0.5;
 
@@ -70,9 +62,7 @@ PID_min_valid_interest = 0.5;
 //
 // The filter is computed in range.
 //
-//
 // Type: boolean
-//
 
 PID_apply_median_filter_to_DBZ = TRUE;
 
@@ -82,9 +72,7 @@ PID_apply_median_filter_to_DBZ = TRUE;
 //
 // See 'PID_apply_median_filter_to_DBZ'.
 //
-//
 // Type: int
-//
 
 PID_DBZ_median_filter_len = 5;
 
@@ -94,9 +82,7 @@ PID_DBZ_median_filter_len = 5;
 //
 // The filter is computed in range.
 //
-//
 // Type: boolean
-//
 
 PID_apply_median_filter_to_ZDR = TRUE;
 
@@ -106,9 +92,7 @@ PID_apply_median_filter_to_ZDR = TRUE;
 //
 // See 'PID_apply_median_filter_to_ZDR'.
 //
-//
 // Type: int
-//
 
 PID_ZDR_median_filter_len = 7;
 
@@ -118,9 +102,7 @@ PID_ZDR_median_filter_len = 7;
 //
 // The filter is computed in range.
 //
-//
 // Type: boolean
-//
 
 PID_apply_median_filter_to_RHOHV = TRUE;
 
@@ -130,9 +112,7 @@ PID_apply_median_filter_to_RHOHV = TRUE;
 //
 // See 'PID_apply_median_filter_to_RHOHV'.
 //
-//
 // Type: int
-//
 
 PID_RHOHV_median_filter_len = 7;
 
@@ -142,9 +122,7 @@ PID_RHOHV_median_filter_len = 7;
 //
 // The filter is computed in range.
 //
-//
 // Type: boolean
-//
 
 PID_apply_median_filter_to_LDR = FALSE;
 
@@ -154,9 +132,7 @@ PID_apply_median_filter_to_LDR = FALSE;
 //
 // See 'PID_apply_median_filter_to_LDR'.
 //
-//
 // Type: int
-//
 
 PID_LDR_median_filter_len = 5;
 
@@ -170,9 +146,7 @@ PID_LDR_median_filter_len = 5;
 //   neutral value, such as 0.0, so that we do not reject gates at which 
 //   valuable data is available.
 //
-//
 // Type: boolean
-//
 
 PID_replace_missing_LDR = TRUE;
 
@@ -180,9 +154,7 @@ PID_replace_missing_LDR = TRUE;
 //
 // Value to which LDR will be set if missing.
 //
-//
 // Type: double
-//
 
 PID_LDR_replacement_value = 0;
 
@@ -192,9 +164,7 @@ PID_LDR_replacement_value = 0;
 //
 // This applies to computing the standard deviation of zdr and phidp.
 //
-//
 // Type: int
-//
 
 PID_ngates_for_sdev = 9;
 
@@ -205,9 +175,7 @@ PID_ngates_for_sdev = 9;
 // If TRUE, the interest field for each particle type will be written to 
 //   the output FMQ, in addition to the list in 'output_fields'.
 //
-//
 // Type: boolean
-//
 
 PID_output_particle_interest_fields = FALSE;
 
@@ -221,9 +189,7 @@ PID_output_particle_interest_fields = FALSE;
 //   Designation of the Melting Layer with Polarimitric Prototype of 
 //   WSR-88D Radar - AMS JAMC, Vol47, 2008.
 //
-//
 // Type: boolean
-//
 
 PID_locate_melting_layer = TRUE;
 
@@ -235,9 +201,7 @@ PID_locate_melting_layer = TRUE;
 //   containing WET_SNOW, from bottom to top. This is the percentile value 
 //   for the bottom of the layer.
 //
-//
 // Type: double
-//
 
 PID_melting_layer_percentile_for_bottom_limit = 25;
 
@@ -249,9 +213,7 @@ PID_melting_layer_percentile_for_bottom_limit = 25;
 //   containing WET_SNOW, from bottom to top. This is the percentile value 
 //   for the top of the layer.
 //
-//
 // Type: double
-//
 
 PID_melting_layer_percentile_for_top_limit = 75;
 
@@ -262,9 +224,7 @@ PID_melting_layer_percentile_for_top_limit = 75;
 // If true, the melting layer properties will be saved to SPDB using XML 
 //   encoding. See 'melting_layer_spdb_output_url'.
 //
-//
 // Type: boolean
-//
 
 PID_melting_layer_write_results_to_spdb = FALSE;
 
@@ -275,9 +235,7 @@ PID_melting_layer_write_results_to_spdb = FALSE;
 // For local writes, specify the directory. For remote writes, specify 
 //   the full url: spdbp:://host::dir.
 //
-//
 // Type: string
-//
 
 PID_melting_layer_spdb_output_url = "/tmp/spdb/melting_layer";
 
@@ -296,9 +254,7 @@ PID_melting_layer_spdb_output_url = "/tmp/spdb/melting_layer";
 //   sounding will be used to override the temperature profile in the PID 
 //   thresholds config file.
 //
-//
 // Type: boolean
-//
 
 PID_use_soundings_from_spdb = TRUE;
 
@@ -306,9 +262,7 @@ PID_use_soundings_from_spdb = TRUE;
 //
 // SPDB URL for sounding data.
 //
-//
 // Type: string
-//
 
 PID_sounding_spdb_url = "$(BASE_DIR)/data/echo/sounding/spdb/";
 
@@ -319,9 +273,7 @@ PID_sounding_spdb_url = "$(BASE_DIR)/data/echo/sounding/spdb/";
 // This is the total size of the output FMQ buffer. Some of this buffer 
 //   will be used for control bytes (12 bytes per message).
 //
-//
 // Type: int
-//
 
 PID_sounding_search_time_margin_secs = 86400;
 
@@ -332,9 +284,7 @@ PID_sounding_search_time_margin_secs = 86400;
 // If set, we request a profile just for that sounding. If empty, all 
 //   soundings in the data base are considered valid.
 //
-//
 // Type: string
-//
 
 PID_sounding_location_name = "$(RADAR_NAME)";
 
@@ -345,9 +295,7 @@ PID_sounding_location_name = "$(RADAR_NAME)";
 // If TRUE, we will check that pressure range in the sounding meets or 
 //   exceeds the min and max specified.
 //
-//
 // Type: boolean
-//
 
 PID_sounding_check_pressure_range = TRUE;
 
@@ -359,13 +307,11 @@ PID_sounding_check_pressure_range = TRUE;
 //   pressure data does not fully cover this range, the sounding is 
 //   rejected and we look back for the next available one.
 //
-//
 // Type: struct
 //   typedef struct {
 //      double min_val;
 //      double max_val;
 //   }
-//
 //
 
 PID_sounding_required_pressure_range_hpa = {
@@ -380,9 +326,7 @@ PID_sounding_required_pressure_range_hpa = {
 // If TRUE, we will check that height range in the sounding meets or 
 //   exceeds the min and max specified.
 //
-//
 // Type: boolean
-//
 
 PID_sounding_check_height_range = TRUE;
 
@@ -394,13 +338,11 @@ PID_sounding_check_height_range = TRUE;
 //   height data does not fully cover this range, the sounding is rejected 
 //   and we look back for the next available one.
 //
-//
 // Type: struct
 //   typedef struct {
 //      double min_val;
 //      double max_val;
 //   }
-//
 //
 
 PID_sounding_required_height_range_m = {
@@ -415,9 +357,7 @@ PID_sounding_required_height_range_m = {
 // If TRUE, we will check that pressure decreases monotonically. If not, 
 //   the sounding is rejected and we look back for the next available one.
 //
-//
 // Type: boolean
-//
 
 PID_sounding_check_pressure_monotonically_decreasing = FALSE;
 
@@ -429,9 +369,7 @@ PID_sounding_check_pressure_monotonically_decreasing = FALSE;
 //   level seems low, the correction should be positive. If the freezing 
 //   level appears high, it should be negative.
 //
-//
 // Type: double
-//
 
 PID_sounding_height_correction_km = 0;
 
@@ -443,9 +381,7 @@ PID_sounding_height_correction_km = 0;
 //   instead of the dry bulb. This is thought to more closely track the 
 //   temperature of melting ice.
 //
-//
 // Type: boolean
-//
 
 PID_sounding_use_wet_bulb_temp = FALSE;
 

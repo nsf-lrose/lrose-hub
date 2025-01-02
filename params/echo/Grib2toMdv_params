@@ -1,5 +1,5 @@
 /**********************************************************************
- * TDRP params for /usr/local/lrose/bin/Grib2toMdv
+ * TDRP params for Grib2toMdv
  **********************************************************************/
 
 //======================================================================
@@ -24,9 +24,7 @@
 // 1 = Regular Debug info
 // 2 = Full Grib2 file output (see printSec params).
 //
-//
 // Type: int
-//
 
 debug = 0;
 
@@ -36,9 +34,7 @@ debug = 0;
 //
 // Process instance for registration with process mapper.
 //
-//
 // Type: string
-//
 
 instance = "Test";
 
@@ -49,9 +45,7 @@ instance = "Test";
 // Set to a high value if processing takes a long time. This will 
 //   prevent the auto_restarter from killing and restarting the app.
 //
-//
 // Type: int
-//
 
 procmap_register_interval_secs = 1200;
 
@@ -62,9 +56,7 @@ procmap_register_interval_secs = 1200;
 // Directory which contains input grib2 files. Used only if files are 
 //   not specified on the command line.
 //
-//
 // Type: string
-//
 
 input_dir = "./";
 
@@ -75,9 +67,7 @@ input_dir = "./";
 // Input file suffixes will be checked against this string. Used only if 
 //   files are not specified on the command line.
 //
-//
 // Type: string
-//
 
 input_suffix = "";
 
@@ -89,9 +79,7 @@ input_suffix = "";
 //   different forecast times.Used only if files are not specified on the 
 //   command line.
 //
-//
 // Type: string
-//
 
 input_substring = "";
 
@@ -103,10 +91,8 @@ input_substring = "";
 //   filter different forecast times. Used only if files are not specified 
 //   on the command line and input_substring is set to an empty string.
 //
-//
 // Type: string
 // 1D array - variable length.
-//
 
 input_substrings = {
 };
@@ -120,7 +106,6 @@ input_substrings = {
 // Minimum val: 60
 //
 // Type: int
-//
 
 max_input_data_age = 10800;
 
@@ -130,9 +115,7 @@ max_input_data_age = 10800;
 //
 // If FALSE, watch input_dir for new files.
 //
-//
 // Type: boolean
-//
 
 latest_data_info_avail = FALSE;
 
@@ -142,9 +125,7 @@ latest_data_info_avail = FALSE;
 //
 // Only applies if latest_data_info_avail is FALSE.
 //
-//
 // Type: boolean
-//
 
 recursive_search = FALSE;
 
@@ -155,9 +136,7 @@ recursive_search = FALSE;
 // If TRUE, only the latest file will be processed. If FALSE, 
 //   previously-written files will be processed.
 //
-//
 // Type: boolean
-//
 
 latest_file_only = TRUE;
 
@@ -165,9 +144,7 @@ latest_file_only = TRUE;
 //
 // How often to check for new data (secs).
 //
-//
 // Type: int
-//
 
 data_check_interval_secs = 5;
 
@@ -186,9 +163,7 @@ data_check_interval_secs = 5;
 //
 // Only prints with -printSec or debug > 1.
 //
-//
 // Type: boolean
-//
 
 printSec_is = FALSE;
 
@@ -198,9 +173,7 @@ printSec_is = FALSE;
 //
 // Only prints with -printSec or debug > 1.
 //
-//
 // Type: boolean
-//
 
 printSec_ids = FALSE;
 
@@ -210,9 +183,7 @@ printSec_ids = FALSE;
 //
 // Only prints with -printSec or debug > 1.
 //
-//
 // Type: boolean
-//
 
 printSec_lus = FALSE;
 
@@ -222,9 +193,7 @@ printSec_lus = FALSE;
 //
 // Only prints with -printSec or debug > 1.
 //
-//
 // Type: boolean
-//
 
 printSec_gds = FALSE;
 
@@ -234,9 +203,7 @@ printSec_gds = FALSE;
 //
 // Only prints with -printSec or debug > 1.
 //
-//
 // Type: boolean
-//
 
 printSec_pds = FALSE;
 
@@ -246,9 +213,7 @@ printSec_pds = FALSE;
 //
 // Only prints with -printSec or debug > 1.
 //
-//
 // Type: boolean
-//
 
 printSec_drs = FALSE;
 
@@ -258,9 +223,7 @@ printSec_drs = FALSE;
 //
 // Only prints with -printSec or debug > 1.
 //
-//
 // Type: boolean
-//
 
 printSec_bms = FALSE;
 
@@ -270,9 +233,7 @@ printSec_bms = FALSE;
 //
 // Only prints with -printSec or debug > 1.
 //
-//
 // Type: boolean
-//
 
 printSec_ds = FALSE;
 
@@ -289,9 +250,7 @@ printSec_ds = FALSE;
 // Grib2 doesnt allow for setting a missing value unless complex data 
 //   packing used. .
 //
-//
 // Type: boolean
-//
 
 autoset_missing_value = TRUE;
 
@@ -301,9 +260,7 @@ autoset_missing_value = TRUE;
 //
 // If set, we check the lead time before writing files.
 //
-//
 // Type: boolean
-//
 
 check_lead_time = TRUE;
 
@@ -313,9 +270,7 @@ check_lead_time = TRUE;
 //
 // See 'check_lead_time'.
 //
-//
 // Type: int
-//
 
 max_lead_time_secs = 86400;
 
@@ -325,9 +280,7 @@ max_lead_time_secs = 86400;
 //
 // Set to true to enable lead time subsampling.
 //
-//
 // Type: boolean
-//
 
 lead_time_subsampling = FALSE;
 
@@ -335,10 +288,8 @@ lead_time_subsampling = FALSE;
 //
 // The subsampled lead times to process.
 //
-//
 // Type: int
 // 1D array - variable length.
-//
 
 subsample_lead_times = {
 };
@@ -351,9 +302,7 @@ subsample_lead_times = {
 //   directory structure.  Note that if write_non_forecast is also set to 
 //   true, two mdv files will be written.
 //
-//
 // Type: boolean
-//
 
 write_forecast = FALSE;
 
@@ -361,9 +310,7 @@ write_forecast = FALSE;
 //
 // Url for mdv files in forecast structure.
 //
-//
 // Type: string
-//
 
 forecast_mdv_url = "mdvp:://localhost::./mdv";
 
@@ -378,9 +325,7 @@ forecast_mdv_url = "mdvp:://localhost::./mdv";
 //   will be used as the data time in this case.  This is a temporary 
 //   option to allow for easier display of the data.
 //
-//
 // Type: boolean
-//
 
 write_non_forecast = TRUE;
 
@@ -388,12 +333,9 @@ write_non_forecast = TRUE;
 //
 // Url for mdv files in non-forecast structure.
 //
-//
 // Type: string
-//
 
 non_forecast_mdv_url = "$(BASE_DIR)/data/echo/sounding/mdv";
-
 
 ///////////// non_forecast_timestamp //////////////////
 //
@@ -402,12 +344,10 @@ non_forecast_mdv_url = "$(BASE_DIR)/data/echo/sounding/mdv";
 //
 // The choices are TIMESTAMP_GEN_TIME and TIMESTAMP_FCAST_TIME.
 //
-//
 // Type: enum
 // Options:
 //     TIMESTAMP_GEN_TIME
 //     TIMESTAMP_FCAST_TIME
-//
 
 non_forecast_timestamp = TIMESTAMP_FCAST_TIME;
 
@@ -422,9 +362,7 @@ non_forecast_timestamp = TIMESTAMP_FCAST_TIME;
 //   is assumed to be forecast data, but written into a regular 
 //   (non-forecast) rap directory structure anyway.
 //
-//
 // Type: boolean
-//
 
 data_is_non_forecast = FALSE;
 
@@ -434,9 +372,7 @@ data_is_non_forecast = FALSE;
 //
 // If false, will suppress writing of _latest_data_info files.
 //
-//
 // Type: boolean
-//
 
 writeLdataInfo = TRUE;
 
@@ -446,9 +382,7 @@ writeLdataInfo = TRUE;
 //
 // This is placed in the MDV master header for documentation purposes.
 //
-//
 // Type: string
-//
 
 data_set_info = "Converted to MDV with Grib2toMdv.";
 
@@ -458,9 +392,7 @@ data_set_info = "Converted to MDV with Grib2toMdv.";
 //
 // This is placed in the MDV master header for documentation purposes.
 //
-//
 // Type: string
-//
 
 data_set_name = "GFS";
 
@@ -470,9 +402,7 @@ data_set_name = "GFS";
 //
 // This is placed in the MDV master header for documentation purposes.
 //
-//
 // Type: string
-//
 
 data_set_source = "Grib2.";
 
@@ -483,9 +413,7 @@ data_set_source = "Grib2.";
 // If TRUE, all fields will be processed.
 // If FALSE, only fields listed in output_fields list will be processed.
 //
-//
 // Type: boolean
-//
 
 process_everything = FALSE;
 
@@ -542,7 +470,6 @@ process_everything = FALSE;
 //
 // Default behavior is to process everything with no changes.
 //
-//
 // Type: struct
 //   typedef struct {
 //      string param;
@@ -587,7 +514,6 @@ process_everything = FALSE;
 //   }
 //
 // 1D array - variable length.
-//
 
 output_fields = {
   {
@@ -686,11 +612,9 @@ output_fields = {
   }
 };
 
-
 ///////////// encoding_type ///////////////////////////
 //
 // File encoding type, Used only when process_everything is true.
-//
 //
 // Type: enum
 // Options:
@@ -698,14 +622,12 @@ output_fields = {
 //     ENCODING_INT8
 //     ENCODING_INT16
 //     ENCODING_FLOAT32
-//
 
 encoding_type = ENCODING_FLOAT32;
 
 ///////////// compression_type ////////////////////////
 //
 // File compression type, Used only when process_everything is true.
-//
 //
 // Type: enum
 // Options:
@@ -716,7 +638,6 @@ encoding_type = ENCODING_FLOAT32;
 //     COMPRESSION_ZLIB
 //     COMPRESSION_BZIP
 //     COMPRESSION_GZIP
-//
 
 compression_type = COMPRESSION_GZIP;
 
@@ -728,14 +649,12 @@ compression_type = COMPRESSION_GZIP;
 // If SpecifyScaling is true then the following scale and bias values 
 //   will be used. If false dynamic scaling is applied.
 //
-//
 // Type: struct
 //   typedef struct {
 //      boolean SpecifyScaling;
 //      double scale;
 //      double bias;
 //   }
-//
 //
 
 output_scaling_info = {
@@ -748,9 +667,7 @@ output_scaling_info = {
 //
 // If TRUE remaps output.
 //
-//
 // Type: boolean
-//
 
 remap_output = TRUE;
 
@@ -773,7 +690,6 @@ remap_output = TRUE;
 //   chosen the parameters origin_lat, origin_lon, ref_lat_1 and ref_lat_2 
 //   must be set.
 //
-//
 // Type: struct
 //   typedef struct {
 //      projection_t type;
@@ -787,7 +703,6 @@ remap_output = TRUE;
 //      double ref_lat_1;
 //      double ref_lat_2;
 //   }
-//
 //
 
 out_projection_info = {
@@ -811,7 +726,6 @@ out_projection_info = {
 //   dx = deltaLon
 //   dy = deltaLat.
 //
-//
 // Type: struct
 //   typedef struct {
 //      int nx;
@@ -822,17 +736,15 @@ out_projection_info = {
 //      double dy;
 //   }
 //
-//
 
 out_grid_info = {
     nx = 60,
     ny = 60,
-    minx = -80.00,
-    miny = 32.00,
+    minx = -80,
+    miny = 32,
     dx = 0.1,
     dy = 0.1
 };
-
 
 ///////////// override_vlevels ////////////////////////
 //
@@ -845,9 +757,7 @@ out_grid_info = {
 // Please note using this functionality can create incorrect levels, use 
 //   carefully!.
 //
-//
 // Type: string
-//
 
 override_vlevels = "";
 
@@ -857,10 +767,8 @@ override_vlevels = "";
 //
 // See 'override_vlevels'.
 //
-//
 // Type: double
 // 1D array - variable length.
-//
 
 vlevel_array = {
  0
@@ -884,9 +792,7 @@ vlevel_array = {
 //   levels. (b) Also, geopotential height must be available in the data 
 //   set. This field is used for the interpolation.
 //
-//
 // Type: boolean
-//
 
 interp_vlevels_to_height = TRUE;
 
@@ -896,9 +802,7 @@ interp_vlevels_to_height = TRUE;
 //
 // See output_fields array.
 //
-//
 // Type: string
-//
 
 height_field_mdv_name = "HGT";
 
@@ -908,12 +812,10 @@ height_field_mdv_name = "HGT";
 //
 // The data fields are intepolated onto this set of height levels.
 //
-//
 // Type: double
 // 1D array - variable length.
-//
 
-height_levels = { 
+height_levels = {
  0,
  0.25,
  0.5,
@@ -934,14 +836,14 @@ height_levels = {
  7.5,
  8,
  9,
- 10, 
- 11, 
- 12, 
- 13, 
- 14, 
- 15, 
- 16, 
- 17, 
+ 10,
+ 11,
+ 12,
+ 13,
+ 14,
+ 15,
+ 16,
+ 17,
  18
 };
 
@@ -953,9 +855,7 @@ height_levels = {
 //   heights from the pressure levels. In this case, the height_levels 
 //   array is ignored.
 //
-//
 // Type: boolean
-//
 
 compute_heights_from_pressure_levels = FALSE;
 
@@ -966,9 +866,7 @@ compute_heights_from_pressure_levels = FALSE;
 // Any heights below this are removed when converting from pressure 
 //   levels.
 //
-//
 // Type: double
-//
 
 min_height_from_pressure_levels = 0;
 

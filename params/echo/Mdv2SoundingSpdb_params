@@ -22,13 +22,11 @@
 //
 // If set, debug messages will be printed appropriately.
 //
-//
 // Type: enum
 // Options:
 //     DEBUG_OFF
 //     DEBUG_NORM
 //     DEBUG_VERBOSE
-//
 
 debug = DEBUG_OFF;
 
@@ -38,9 +36,7 @@ debug = DEBUG_OFF;
 //
 // Used for registration with procmap.
 //
-//
 // Type: string
-//
 
 instance = "DEBUG_VERBOSE";
 
@@ -54,9 +50,7 @@ instance = "DEBUG_VERBOSE";
 //   The auto-restarter will restart any app which has not registered for 
 //   twice the length of the register interval.
 //
-//
 // Type: int
-//
 
 procmap_register_interval = 60;
 
@@ -72,9 +66,7 @@ procmap_register_interval = 60;
 //
 // Path of input directory.
 //
-//
 // Type: string
-//
 
 input_dir = "";
 
@@ -85,13 +77,11 @@ input_dir = "";
 // REALTIME: - waits for new data. ARCHIVE: uses start and end times. 
 //   FILELIST: processes specified file list.
 //
-//
 // Type: enum
 // Options:
 //     REALTIME
 //     ARCHIVE
 //     FILELIST
-//
 
 mode = FILELIST;
 
@@ -104,7 +94,6 @@ mode = FILELIST;
 // Minimum val: 0
 //
 // Type: int
-//
 
 max_realtime_valid_age = 300;
 
@@ -115,9 +104,7 @@ max_realtime_valid_age = 300;
 // REALTIME mode only. If false, the directory input_dir is scanned for 
 //   new files.
 //
-//
 // Type: boolean
-//
 
 latest_data_info_avail = FALSE;
 
@@ -133,9 +120,7 @@ latest_data_info_avail = FALSE;
 //
 // Set to empty string if no temperature field.
 //
-//
 // Type: string
-//
 
 temp_field_name = "TMP";
 
@@ -145,9 +130,7 @@ temp_field_name = "TMP";
 //
 // If false, temps are in Celsius. Also applies to dew-pt.
 //
-//
 // Type: boolean
-//
 
 temp_units_are_kelvin = FALSE;
 
@@ -157,9 +140,7 @@ temp_units_are_kelvin = FALSE;
 //
 // Set to empty string if no RH field is available.
 //
-//
 // Type: string
-//
 
 rh_field_name = "RH";
 
@@ -167,9 +148,7 @@ rh_field_name = "RH";
 //
 // Set to TRUE to compute relative humidity from dew-pt field.
 //
-//
 // Type: boolean
-//
 
 compute_rh_from_dewpt = FALSE;
 
@@ -179,9 +158,7 @@ compute_rh_from_dewpt = FALSE;
 //
 // Set to empty string if no dew-pt field.
 //
-//
 // Type: string
-//
 
 dewpt_field_name = "";
 
@@ -191,9 +168,7 @@ dewpt_field_name = "";
 //
 // Set to empty string if no X component of wind. Assumed to be in m/s.
 //
-//
 // Type: string
-//
 
 u_wind_field_name = "UGRD";
 
@@ -203,9 +178,7 @@ u_wind_field_name = "UGRD";
 //
 // Set to empty string if no Y component of wind. Assumed to be in m/s.
 //
-//
 // Type: string
-//
 
 v_wind_field_name = "VGRD";
 
@@ -215,9 +188,7 @@ v_wind_field_name = "VGRD";
 //
 // Set to empty string if no Z component of wind. Assumed to be in m/s.
 //
-//
 // Type: string
-//
 
 w_wind_field_name = "";
 
@@ -229,9 +200,7 @@ w_wind_field_name = "";
 //   this is missing, and the vertical levels are in pressure, the 
 //   vertical level value will be used.
 //
-//
 // Type: string
-//
 
 pressure_field_name = "Pressure";
 
@@ -243,9 +212,7 @@ pressure_field_name = "Pressure";
 //   is missing, and the vertical levels are in km, the vertical level 
 //   value will be used.
 //
-//
 // Type: string
-//
 
 height_field_name = "HGT";
 
@@ -253,9 +220,7 @@ height_field_name = "HGT";
 //
 // Set to TRUE if height values are in km instead of m.
 //
-//
 // Type: boolean
-//
 
 heights_are_in_km = TRUE;
 
@@ -269,7 +234,6 @@ heights_are_in_km = TRUE;
 //
 // Sampling locations.
 //
-//
 // Type: struct
 //   typedef struct {
 //      string name;
@@ -279,7 +243,6 @@ heights_are_in_km = TRUE;
 //   }
 //
 // 1D array - variable length.
-//
 
 station_locations = {
   {
@@ -288,62 +251,6 @@ station_locations = {
     longitude = -76.8762,
     altitudeKm = 0.043
   }
-//  
-//  {
-//    name = "SPOL",
-//    latitude = 40.1233,
-//    longitude = -104.891,
-//    altitudeKm = 1.55296
-//  }
-//  ,
-//  {
-//    name = "CHILL",
-//    latitude = 40.4464,
-//    longitude = -104.637,
-//    altitudeKm = 1.432
-//  }
-//  ,
-//  {
-//    name = "KFTG",
-//    latitude = 39.7866,
-//    longitude = -104.546,
-//    altitudeKm = 1.709
-//  }
-//  ,
-//  {
-//    name = "KCYS",
-//    latitude = 41.1519,
-//    longitude = -104.806,
-//    altitudeKm = 1.886
-//  }
-//  ,
-//  {
-//    name = "KPUX",
-//    latitude = 38.4595,
-//    longitude = -104.181,
-//    altitudeKm = 1.634
-//  }
-//  ,
-//  {
-//    name = "KGLD",
-//    latitude = 39.3667,
-//    longitude = -101.7,
-//    altitudeKm = 1.131
-//  }
-//  ,
-//  {
-//    name = "KGJX",
-//    latitude = 39.0622,
-//    longitude = -108.213,
-//    altitudeKm = 3.064
-//  }
-//  ,
-//  {
-//    name = "PWNE",
-//    latitude = 40.8712,
-//    longitude = -104.714,
-//    altitudeKm = 1.688
-//  }
 };
 
 //======================================================================
@@ -356,9 +263,7 @@ station_locations = {
 //
 // Directory for output data.
 //
-//
 // Type: string
-//
 
 output_url = "$(BASE_DIR)/data/echo/sounding/spdb";
 
@@ -368,9 +273,7 @@ output_url = "$(BASE_DIR)/data/echo/sounding/spdb";
 //
 // How long until the next sounding is expected?.
 //
-//
 // Type: int
-//
 
 valid_period_secs = 43200;
 
