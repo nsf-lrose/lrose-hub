@@ -25,14 +25,12 @@
 //
 // If set, debug messages will be printed appropriately.
 //
-//
 // Type: enum
 // Options:
 //     DEBUG_OFF
 //     DEBUG_NORM
 //     DEBUG_VERBOSE
 //     DEBUG_EXTRA
-//
 
 debug = DEBUG_OFF;
 
@@ -59,7 +57,6 @@ debug = DEBUG_OFF;
 // Minimum val: 1
 //
 // Type: int
-//
 
 n_compute_threads = 4;
 
@@ -82,13 +79,11 @@ n_compute_threads = 4;
 // In FILELIST mode, it moves through the list of file names specified 
 //   on the command line.
 //
-//
 // Type: enum
 // Options:
 //     REALTIME
 //     ARCHIVE
 //     FILELIST
-//
 
 mode = FILELIST;
 
@@ -98,9 +93,7 @@ mode = FILELIST;
 //
 // Files will be searched for in this directory.
 //
-//
 // Type: string
-//
 
 input_dir = ".";
 
@@ -110,9 +103,7 @@ input_dir = ".";
 //
 // If set, only files with this extension will be processed.
 //
-//
 // Type: string
-//
 
 input_file_search_ext = "";
 
@@ -123,9 +114,7 @@ input_file_search_ext = "";
 // If set, only files with names containing this sub-string will be 
 //   processed.
 //
-//
 // Type: string
-//
 
 input_file_search_substr = "";
 
@@ -135,9 +124,7 @@ input_file_search_substr = "";
 //
 // Format is 'yyyy mm dd hh mm ss'.
 //
-//
 // Type: string
-//
 
 start_time = "2015 06 26 00 00 00";
 
@@ -147,9 +134,7 @@ start_time = "2015 06 26 00 00 00";
 //
 // Format is 'yyyy mm dd hh mm ss'.
 //
-//
 // Type: string
-//
 
 end_time = "2015 06 26 12 00 00";
 
@@ -170,9 +155,7 @@ end_time = "2015 06 26 12 00 00";
 // If not, SNR will be computed from the DBZ field. See 
 //   'noise_dbz_at_100km'.
 //
-//
 // Type: boolean
-//
 
 SNR_available = FALSE;
 
@@ -182,9 +165,7 @@ SNR_available = FALSE;
 //
 // Signal-to-noise ratio (dB).
 //
-//
 // Type: string
-//
 
 SNR_field_name = "SNR";
 
@@ -196,9 +177,7 @@ SNR_field_name = "SNR";
 //   used if SNR_available is FALSE. The SNR will be computed by 
 //   range-correcting this value and using it as the noise value.
 //
-//
 // Type: double
-//
 
 noise_dbz_at_100km = 0;
 
@@ -208,9 +187,7 @@ noise_dbz_at_100km = 0;
 //
 // Horizontally-polarized reflectivity factor.
 //
-//
 // Type: string
-//
 
 DBZ_field_name = "DBZ";
 
@@ -218,9 +195,7 @@ DBZ_field_name = "DBZ";
 //
 // Field name for ZDR.
 //
-//
 // Type: string
-//
 
 ZDR_field_name = "ZDR";
 
@@ -228,9 +203,7 @@ ZDR_field_name = "ZDR";
 //
 // Field name for PHIDP.
 //
-//
 // Type: string
-//
 
 PHIDP_field_name = "PHIDP";
 
@@ -238,9 +211,7 @@ PHIDP_field_name = "PHIDP";
 //
 // Field name for RHOHV.
 //
-//
 // Type: string
-//
 
 RHOHV_field_name = "RHOHV";
 
@@ -248,9 +219,7 @@ RHOHV_field_name = "RHOHV";
 //
 // Is LDR data available?.
 //
-//
 // Type: boolean
-//
 
 LDR_available = FALSE;
 
@@ -258,9 +227,7 @@ LDR_available = FALSE;
 //
 // Field name for LDR.
 //
-//
 // Type: string
-//
 
 LDR_field_name = "LDR";
 
@@ -279,9 +246,7 @@ LDR_field_name = "LDR";
 // If KDP is available, then it is not computed. Instead KDP_field_name 
 //   will be read in.
 //
-//
 // Type: boolean
-//
 
 KDP_available = FALSE;
 
@@ -289,9 +254,7 @@ KDP_available = FALSE;
 //
 // Field name for KDP.
 //
-//
 // Type: string
-//
 
 KDP_field_name = "KDP";
 
@@ -302,9 +265,7 @@ KDP_field_name = "KDP";
 // If set to use-defaults, no parameter file will be read in, and the 
 //   default parameters will be used.
 //
-//
 // Type: string
-//
 
 KDP_params_file_path = "$(BASE_DIR)/params/qc/RadxPid_Kdp_params";
 
@@ -321,9 +282,7 @@ KDP_params_file_path = "$(BASE_DIR)/params/qc/RadxPid_Kdp_params";
 // If set to use-defaults, no parameter file will be read in, and the 
 //   default parameters will be used.
 //
-//
 // Type: string
-//
 
 PID_params_file_path = "$(BASE_DIR)/params/qc/RadxPid_Pid_params";
 
@@ -336,9 +295,7 @@ PID_params_file_path = "$(BASE_DIR)/params/qc/RadxPid_Pid_params";
 //   parameter is set to TRUE, the self-consistency result will be used 
 //   instead of the standard result.
 //
-//
 // Type: boolean
-//
 
 PID_use_KDP_self_consistency = FALSE;
 
@@ -349,9 +306,7 @@ PID_use_KDP_self_consistency = FALSE;
 // If TRUE, the attenuation-corrected Z and ZDR fields will be used for 
 //   computing PID.
 //
-//
 // Type: boolean
-//
 
 PID_use_attenuation_corrected_fields = TRUE;
 
@@ -368,9 +323,7 @@ PID_use_attenuation_corrected_fields = TRUE;
 // If set to use-defaults, no parameter file will be read in, and the 
 //   default parameters will be used.
 //
-//
 // Type: string
-//
 
 RATE_params_file_path = "use-defaults";
 
@@ -383,9 +336,7 @@ RATE_params_file_path = "use-defaults";
 //   parameter is set to TRUE, the self-consistency result will be used 
 //   instead of the standard result.
 //
-//
 // Type: boolean
-//
 
 RATE_use_KDP_self_consistency = FALSE;
 
@@ -396,9 +347,7 @@ RATE_use_KDP_self_consistency = FALSE;
 // If TRUE, the attenuation-corrected Z and ZDR fields will be used for 
 //   computing PRECIP.
 //
-//
 // Type: boolean
-//
 
 RATE_use_attenuation_corrected_fields = FALSE;
 
@@ -443,7 +392,6 @@ RATE_use_attenuation_corrected_fields = FALSE;
 // censor_non_weather: use PID field to censor non-weather PID types - 
 //   see non_weather_pid_types[] below.
 //
-//
 // Type: struct
 //   typedef struct {
 //      output_field_id_t id;
@@ -475,7 +423,6 @@ RATE_use_attenuation_corrected_fields = FALSE;
 //   }
 //
 // 1D array - variable length.
-//
 
 output_fields = {
   {
@@ -635,12 +582,10 @@ output_fields = {
 //
 // INT16 provides better compression. FL32 writes 32-bit floats.
 //
-//
 // Type: enum
 // Options:
 //     OUTPUT_ENCODING_FL32
 //     OUTPUT_ENCODING_INT16
-//
 
 output_encoding = OUTPUT_ENCODING_INT16;
 
@@ -658,9 +603,7 @@ output_encoding = OUTPUT_ENCODING_INT16;
 //
 // Option to copy input fields unchanged to the output file.
 //
-//
 // Type: boolean
-//
 
 copy_selected_input_fields_to_output = TRUE;
 
@@ -673,7 +616,6 @@ copy_selected_input_fields_to_output = TRUE;
 // censor_non_weather: use PID field to censor non-weather PID types - 
 //   see non_weather_pid_types[] below.
 //
-//
 // Type: struct
 //   typedef struct {
 //      string input_name;
@@ -682,7 +624,6 @@ copy_selected_input_fields_to_output = TRUE;
 //   }
 //
 // 1D array - variable length.
-//
 
 copy_fields = {
   {
@@ -739,7 +680,6 @@ copy_fields = {
 //   to true. You can consider adding CLOUD to the list if, for example, 
 //   the CLOUD type finds Bragg echo instead of cloud.
 //
-//
 // Type: enum
 // Options:
 //     CLOUD
@@ -763,7 +703,6 @@ copy_fields = {
 //     CHAFF
 //     MISC
 // 1D array - variable length.
-//
 
 non_weather_pid_types = {
  FLYING_INSECTS,
@@ -787,9 +726,7 @@ non_weather_pid_types = {
 // These are the intermediate fields used in computing KDP and 
 //   attenuation.
 //
-//
 // Type: boolean
-//
 
 KDP_write_debug_fields = FALSE;
 
@@ -799,9 +736,7 @@ KDP_write_debug_fields = FALSE;
 //
 // These are the intermediate fields used in computing PID.
 //
-//
 // Type: boolean
-//
 
 PID_write_debug_fields = FALSE;
 
@@ -817,9 +752,7 @@ PID_write_debug_fields = FALSE;
 //
 // Files will be written to this directory.
 //
-//
 // Type: string
-//
 
 output_dir = "/tmp/pid";
 
@@ -831,13 +764,11 @@ output_dir = "/tmp/pid";
 //   START_TIME_ONLY: include only start time in file name. END_TIME_ONLY: 
 //   include only end time in file name.
 //
-//
 // Type: enum
 // Options:
 //     START_AND_END_TIMES
 //     START_TIME_ONLY
 //     END_TIME_ONLY
-//
 
 output_filename_mode = START_AND_END_TIMES;
 
@@ -845,13 +776,11 @@ output_filename_mode = START_AND_END_TIMES;
 //
 // Format for the output files.
 //
-//
 // Type: enum
 // Options:
 //     OUTPUT_FORMAT_CFRADIAL
 //     OUTPUT_FORMAT_DORADE
 //     OUTPUT_FORMAT_UF
-//
 
 output_format = OUTPUT_FORMAT_CFRADIAL;
 
@@ -862,9 +791,7 @@ output_format = OUTPUT_FORMAT_CFRADIAL;
 // If empty, the standard prefix will be used. Only applies to CfRadial 
 //   files. Standard prefix is 'cfrad.'.
 //
-//
 // Type: string
-//
 
 output_filename_prefix = "";
 
@@ -875,9 +802,7 @@ output_filename_prefix = "";
 // If not empty, the suffix will be inserted immediately prior to the 
 //   extension.
 //
-//
 // Type: string
-//
 
 output_filename_suffix = "";
 
@@ -889,9 +814,7 @@ output_filename_suffix = "";
 //   instrument name will be included just before the volume number in the 
 //   output file name.
 //
-//
 // Type: boolean
-//
 
 include_instrument_name_in_file_name = TRUE;
 
@@ -902,9 +825,7 @@ include_instrument_name_in_file_name = TRUE;
 // Only applies to CfRadial files. If true, the site name will be 
 //   included just before the volume number in the output file name.
 //
-//
 // Type: boolean
-//
 
 include_site_name_in_file_name = FALSE;
 
@@ -916,9 +837,7 @@ include_site_name_in_file_name = FALSE;
 //   millisecs of the start and end time will be included in the file 
 //   name.
 //
-//
 // Type: boolean
-//
 
 include_subsecs_in_file_name = TRUE;
 
@@ -929,9 +848,7 @@ include_subsecs_in_file_name = TRUE;
 // Default is true. Only applies to CfRadial files. If true, the scan 
 //   type (SUR, SEC, RHI, VER etc) will be included in the file name.
 //
-//
 // Type: boolean
-//
 
 include_scan_type_in_file_name = TRUE;
 
@@ -942,9 +859,7 @@ include_scan_type_in_file_name = TRUE;
 // Default is false. Only applies to CfRadial files. If true, the scan 
 //   name will be included in the file name.
 //
-//
 // Type: boolean
-//
 
 include_scan_name_in_file_name = FALSE;
 
@@ -955,9 +870,7 @@ include_scan_name_in_file_name = FALSE;
 // Default is false. Only applies to CfRadial files. If true, the scan 
 //   Id will be included in the file name.
 //
-//
 // Type: boolean
-//
 
 include_scan_id_in_file_name = FALSE;
 
@@ -968,9 +881,7 @@ include_scan_id_in_file_name = FALSE;
 // Default is false. Only applies to CfRadial files. If true, the range 
 //   resolution (50m) will be included in the file name.
 //
-//
 // Type: boolean
-//
 
 include_range_resolution_in_file_name = FALSE;
 
@@ -981,9 +892,7 @@ include_range_resolution_in_file_name = FALSE;
 // Default is false. Only applies to CfRadial files. If true, the volume 
 //   number is included in the file name, preceded by '_v'.
 //
-//
 // Type: boolean
-//
 
 include_vol_num_in_file_name = FALSE;
 
@@ -994,9 +903,7 @@ include_vol_num_in_file_name = FALSE;
 // Default is false. Only applies to CfRadial files. Normally an 
 //   underscore is used.
 //
-//
 // Type: boolean
-//
 
 use_hyphen_in_file_name_datetime_part = FALSE;
 
@@ -1007,9 +914,7 @@ use_hyphen_in_file_name_datetime_part = FALSE;
 // Applies only if output_filename_mode is SPECIFY_FILE_NAME. File of 
 //   this name will be written to output_dir.
 //
-//
 // Type: string
-//
 
 output_filename = "cfradial.test.nc";
 
@@ -1019,9 +924,7 @@ output_filename = "cfradial.test.nc";
 //
 // Path will be output_dir/yyyymmdd/filename.
 //
-//
 // Type: boolean
-//
 
 append_day_dir_to_output_dir = TRUE;
 
@@ -1031,9 +934,7 @@ append_day_dir_to_output_dir = TRUE;
 //
 // Path will be output_dir/yyyy/yyyymmdd/filename.
 //
-//
 // Type: boolean
-//
 
 append_year_dir_to_output_dir = FALSE;
 
@@ -1049,9 +950,7 @@ append_year_dir_to_output_dir = FALSE;
 //
 // Option to set the max range for any ray.
 //
-//
 // Type: boolean
-//
 
 set_max_range = FALSE;
 
@@ -1061,9 +960,7 @@ set_max_range = FALSE;
 //
 // Gates beyond this range are removed.
 //
-//
 // Type: double
-//
 
 max_range_km = 9999;
 
@@ -1081,9 +978,7 @@ max_range_km = 9999;
 // If true, the standard 4/3 earth radius will be overridden. The US NWS 
 //   NEXRAD system uses 1.21 instead of 1.333.
 //
-//
 // Type: boolean
-//
 
 override_standard_pseudo_earth_radius = FALSE;
 
@@ -1096,9 +991,7 @@ override_standard_pseudo_earth_radius = FALSE;
 //   less than 4.3, and for sub-refraction it will be greater. NEXRAD uses 
 //   1.21.
 //
-//
 // Type: double
-//
 
 pseudo_earth_radius_ratio = 1.33333;
 
@@ -1115,9 +1008,7 @@ pseudo_earth_radius_ratio = 1.33333;
 // This application registers with procmap. This is the instance used 
 //   for registration.
 //
-//
 // Type: string
-//
 
 instance = "test";
 
@@ -1129,9 +1020,7 @@ instance = "test";
 //   interval, to update its status. If it does not register within twice 
 //   this interval, the auto_restart script will restart the app.
 //
-//
 // Type: int
-//
 
 procmap_register_interval = 60;
 
@@ -1141,9 +1030,7 @@ procmap_register_interval = 60;
 //
 // Only data less old than this will be used.
 //
-//
 // Type: int
-//
 
 max_realtime_data_age_secs = 300;
 
