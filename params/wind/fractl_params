@@ -5,23 +5,22 @@ runTime:                start: 2e-06
 
 //======================================================================
 //
-// Fractl calculates U, V, and W wind components from 2 or more Doppler
+// Fractl calculates U, V, and W wind components from 2 or more Doppler 
 //   radars, and writes a NetCdf file with the results.
 //
 //======================================================================
-
+ 
 //======================================================================
 //
 // DEBUGGING.
 //
 //======================================================================
-
+ 
 ///////////// debug ///////////////////////////////////
 //
 // Debug option.
 //
 // If set, debug messages will be printed appropriately.
-//
 //
 // Type: enum
 // Options:
@@ -29,7 +28,6 @@ runTime:                start: 2e-06
 //     DEBUG_NORM
 //     DEBUG_VERBOSE
 //     DEBUG_EXTRA
-//
 
 debug = DEBUG_OFF;
 
@@ -38,9 +36,7 @@ debug = DEBUG_OFF;
 // detail spec used for debugging only.
 // Example: "5,20,30,0.1".
 //
-//
 // Type: string
-//
 
 detailSpec = "not_set";
 
@@ -49,7 +45,7 @@ detailSpec = "not_set";
 // MINIMUM VALUES.
 //
 //======================================================================
-
+ 
 ///////////// minDbz //////////////////////////////////
 //
 // Minimum dBZ value for valid data.
@@ -57,9 +53,7 @@ detailSpec = "not_set";
 // Any value below that will be tossed out.
 // Example: -20.
 //
-//
 // Type: double
-//
 
 minDbz = -20;
 
@@ -70,9 +64,7 @@ minDbz = -20;
 // Any value below that will be tossed out.
 // Example: 0.3.
 //
-//
 // Type: double
-//
 
 minNcp = 0;
 
@@ -81,7 +73,7 @@ minNcp = 0;
 // TEST MODE.
 //
 //======================================================================
-
+ 
 ///////////// testMode ////////////////////////////////
 //
 // Test mode.
@@ -119,7 +111,6 @@ minNcp = 0;
 //        the constant flow and print statistics.
 //        Specify synWinds: 0,0,0.
 //
-//
 // Type: enum
 // Options:
 //     MODE_NONE
@@ -128,7 +119,6 @@ minNcp = 0;
 //     MODE_ZETA
 //     MODE_ZETA_BELTRAMI
 //     MODE_GAMMA
-//
 
 testMode = MODE_ZETA;
 
@@ -137,9 +127,7 @@ testMode = MODE_ZETA;
 // Use radar files i: start <= i < limit.
 // Read all files if start == limit == 0.
 //
-//
 // Type: string
-//
 
 radFiles = "0,0";
 
@@ -148,7 +136,7 @@ radFiles = "0,0";
 // SYN WIND.
 //
 //======================================================================
-
+ 
 ///////////// synWinds ////////////////////////////////
 //
 //       Specify a comma sep triplet: W,V,U
@@ -166,9 +154,7 @@ radFiles = "0,0";
 //           so the wind would be from the SW
 //           to the NW, varying as sin(locx).
 //
-//
 // Type: string
-//
 
 synWinds = "0,0,0";
 
@@ -177,15 +163,13 @@ synWinds = "0,0,0";
 // GRID SPEC.
 //
 //======================================================================
-
+ 
 ///////////// zGrid ///////////////////////////////////
 //
 // "min,max,incr"
 //    To get min and max from the data, specify only the increment.
 //
-//
 // Type: string
-//
 
 zGrid = "0.0,14.5,0.5";
 
@@ -193,9 +177,7 @@ zGrid = "0.0,14.5,0.5";
 //
 // "min,max,incr" or "incr".
 //
-//
 // Type: string
-//
 
 yGrid = "15.0,45.0,0.5";
 
@@ -203,9 +185,7 @@ yGrid = "15.0,45.0,0.5";
 //
 // "min,max,incr" or "incr".
 //
-//
 // Type: string
-//
 
 xGrid = "25.0,55.0,0.5";
 
@@ -214,17 +194,15 @@ xGrid = "25.0,55.0,0.5";
 // GRID_TYPE.
 //
 //======================================================================
-
+ 
 ///////////// gridType ////////////////////////////////
 //
 // Mesh for stand-alone. Mish for Samurai input.
-//
 //
 // Type: enum
 // Options:
 //     GRID_MESH
 //     GRID_MISH
-//
 
 gridType = GRID_MESH;
 
@@ -233,14 +211,12 @@ gridType = GRID_MESH;
 // PROJECTION.
 //
 //======================================================================
-
+ 
 ///////////// projName ////////////////////////////////
 //
 // Must be transverseMercador.
 //
-//
 // Type: string
-//
 
 projName = "transverseMercator";
 
@@ -248,29 +224,23 @@ projName = "transverseMercator";
 //
 // For example: 16.5.
 //
-//
 // Type: double
-//
 
-projLat0 = 40.446362;
+projLat0 = 40.4464;
 
 ///////////// projLon0 ////////////////////////////////
 //
 // For example: 148.0.
 //
-//
 // Type: double
-//
 
-projLon0 = -104.636871;
+projLon0 = -104.637;
 
 ///////////// radarAlt ////////////////////////////////
 //
 // only needed for pre gridded mode.
 //
-//
 // Type: double
-//
 
 radarAlt = 1.432;
 
@@ -279,20 +249,16 @@ radarAlt = 1.432;
 // MISC.
 //
 //======================================================================
-
+ 
 ///////////// baseW ///////////////////////////////////
 //
-//
 // Type: double
-//
 
 baseW = 0;
 
 ///////////// epsilon /////////////////////////////////
 //
-//
 // Type: double
-//
 
 epsilon = 1e-06;
 
@@ -301,14 +267,12 @@ epsilon = 1e-06;
 // LIMITS.
 //
 //======================================================================
-
+ 
 ///////////// maxDeltaAltKm ///////////////////////////
 //
 // in km. Default 0.
 //
-//
 // Type: double
-//
 
 maxDeltaAltKm = 0;
 
@@ -316,9 +280,7 @@ maxDeltaAltKm = 0;
 //
 // in degree.
 //
-//
 // Type: double
-//
 
 maxAbsElevDeg = 0;
 
@@ -326,17 +288,13 @@ maxAbsElevDeg = 0;
 //
 // in km.
 //
-//
 // Type: double
-//
 
 minRadialDistKm = 0;
 
 ///////////// numNbrMax ///////////////////////////////
 //
-//
 // Type: int
-//
 
 numNbrMax = 100;
 
@@ -344,9 +302,7 @@ numNbrMax = 100;
 //
 // max point distance = base + factor * aircraftDist.
 //
-//
 // Type: double
-//
 
 maxDistBase = 1;
 
@@ -354,9 +310,7 @@ maxDistBase = 1;
 //
 // max point distance = base + factor * aircraftDist.
 //
-//
 // Type: double
-//
 
 maxDistFactor = 0.016666;
 
@@ -364,9 +318,7 @@ maxDistFactor = 0.016666;
 //
 // Maximum value for U wind component.
 //
-//
 // Type: double
-//
 
 maxU = 100;
 
@@ -374,9 +326,7 @@ maxU = 100;
 //
 // Maximum value for V wind component.
 //
-//
 // Type: double
-//
 
 maxV = 100;
 
@@ -384,9 +334,7 @@ maxV = 100;
 //
 // Maximum value for W wind component.
 //
-//
 // Type: double
-//
 
 maxW = 50;
 
@@ -394,9 +342,7 @@ maxW = 50;
 //
 // Maximum value for a cell ConditionNumber.
 //
-//
 // Type: double
-//
 
 conditionNumberCutoff = 100;
 
@@ -405,14 +351,12 @@ conditionNumberCutoff = 100;
 // FLAGS.
 //
 //======================================================================
-
+ 
 ///////////// forceOk /////////////////////////////////
 //
 // y/n.
 //
-//
 // Type: string
-//
 
 forceOk = "n";
 
@@ -420,9 +364,7 @@ forceOk = "n";
 //
 // y: use Eigen, n: use Cramer.
 //
-//
 // Type: string
-//
 
 useEigen = "y";
 
@@ -430,9 +372,7 @@ useEigen = "y";
 //
 // (NOT WORKING YET) Data is pre-gridded.
 //
-//
 // Type: string
-//
 
 preGridded = "n";
 
@@ -441,14 +381,12 @@ preGridded = "n";
 // FILES AND DIRECTORIES.
 //
 //======================================================================
-
+ 
 ///////////// inDir ///////////////////////////////////
 //
 // Any radx supported format, or output of Radx2Grid.
 //
-//
 // Type: string
-//
 
 inDir = "../data/wind/input/";
 
@@ -456,9 +394,7 @@ inDir = "../data/wind/input/";
 //
 // for example '^swp'.
 //
-//
 // Type: string
-//
 
 fileRegex = "^cfrad";
 
@@ -468,9 +404,7 @@ fileRegex = "^cfrad";
 // fileName altKmMsl latDeg lonDeg
 // # in the first column is a comment.
 //
-//
 // Type: string
-//
 
 fileList = "not_set";
 
@@ -478,20 +412,16 @@ fileList = "not_set";
 //
 // Has verification of grid results.
 //
-//
 // Type: string
-//
 
 outTxt = "fractl_verif.txt";
 
 ///////////// outNc ///////////////////////////////////
 //
-// If outNc ends in a slash we make a subdir and write to
+// If outNc ends in a slash we make a subdir and write to 
 //   yyyymmdd/ncf_yyyymmdd_hhmmss.nc.
 //
-//
 // Type: string
-//
 
 outNc = "../data/wind/output_frac/";
 
@@ -500,14 +430,12 @@ outNc = "../data/wind/output_frac/";
 // FIELDS.
 //
 //======================================================================
-
+ 
 ///////////// radialName //////////////////////////////
 //
 // VEL for NEXRAD, VG for Eldora, VE for CSU-CHILL.
 //
-//
 // Type: string
-//
 
 radialName = "VE";
 
@@ -515,9 +443,7 @@ radialName = "VE";
 //
 // REF for NEXRAD, DBZ for Eldora, DZ for CSU-CHILL.
 //
-//
 // Type: string
-//
 
 dbzName = "DZ";
 
@@ -525,9 +451,7 @@ dbzName = "DZ";
 //
 // Not available for NEXRAD, NCP for Eldora, NC for CSU-CHILL.
 //
-//
 // Type: string
-//
 
 ncpName = "NC";
 
@@ -536,37 +460,31 @@ ncpName = "NC";
 // FILTERS.
 //
 //======================================================================
-
+ 
 ///////////// uvFilter ////////////////////////////////
-//
 //
 // Type: enum
 // Options:
 //     FILTER_NONE
 //     FILTER_LEISE
-//
 
 uvFilter = FILTER_LEISE;
 
 ///////////// wFilter /////////////////////////////////
 //
-//
 // Type: enum
 // Options:
 //     FILTER_NONE
 //     FILTER_LEISE
-//
 
 wFilter = FILTER_LEISE;
 
 ///////////// uvSteps /////////////////////////////////
 //
-// Applies to all dimensions. Use uvMultiSteps for dimension specific
+// Applies to all dimensions. Use uvMultiSteps for dimension specific 
 //   steps.
 //
-//
 // Type: int
-//
 
 uvSteps = 2;
 
@@ -575,20 +493,16 @@ uvSteps = 2;
 // Comma separated steps.
 // Example: "1,2,1".
 //
-//
 // Type: string
-//
 
 uvMultiStep = "not_set";
 
 ///////////// wSteps //////////////////////////////////
 //
-// Applies to all dimensions. Use wMultiStep for dimension specific
+// Applies to all dimensions. Use wMultiStep for dimension specific 
 //   steps.
 //
-//
 // Type: int
-//
 
 wSteps = 1;
 
@@ -597,9 +511,7 @@ wSteps = 1;
 // Comma separated steps.
 // Example: "1,2,1".
 //
-//
 // Type: string
-//
 
 wMultiStep = "not_set";
 
@@ -608,17 +520,16 @@ wMultiStep = "not_set";
 // INTERPOLATION.
 //
 //======================================================================
-
+ 
 ///////////// uvInterp ////////////////////////////////
 //
 // Applied before calculating W.
-//
 //
 // Type: enum
 // Options:
 //     INTERP_NONE
 //     INTERP_LEISE
 //     INTERP_RADAR_WIND
-//
 
 uvInterp = INTERP_NONE;
+
