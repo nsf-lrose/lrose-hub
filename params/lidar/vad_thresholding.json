@@ -1,0 +1,6 @@
+{
+    "correlation_min": 0.8,
+    "residual_max": 2.25,
+    "mean_snr_min": -28.0,
+    "nbeams_used_min_fraction": 0.75
+}
