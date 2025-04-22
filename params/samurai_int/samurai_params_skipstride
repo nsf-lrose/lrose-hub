@@ -168,7 +168,7 @@ projection = PROJ_TRANSVERSE_MERCATOR_EXACT;
 //
 // Type: string
 
-data_directory = "./data/samurai_int/input_michael";
+data_directory = "../data/samurai_int/input_michael";
 
 ///////////// output_directory ////////////////////////
 //
@@ -178,7 +178,7 @@ data_directory = "./data/samurai_int/input_michael";
 //
 // Type: string
 
-output_directory = "./data/samurai_int/output_skipstride";
+output_directory = "../data/samurai_int/output_skipstride";
 
 ///////////// preprocess_obs //////////////////////////
 //
