@@ -206,7 +206,7 @@ data_directory = "../data/samurai_int/input_precip";
 // Type: string
 //
 
-output_directory = "../data/samurai_int/output_filterspline";
+output_directory = "../data/samurai_int/output_finale";
 
 ///////////// preprocess_obs //////////////////////////
 //
