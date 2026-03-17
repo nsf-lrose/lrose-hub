@@ -284,7 +284,7 @@ KDP_params_file_path = "use-defaults";
 //
 // Type: string
 
-PID_params_file_path = "pid_thresholds.sband.shv";
+PID_params_file_path = "../params/titan/PidParams.derecho";
 
 ///////////// PID_use_KDP_self_consistency ////////////
 //
