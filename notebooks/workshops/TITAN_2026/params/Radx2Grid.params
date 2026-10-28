@@ -1955,7 +1955,7 @@ netcdf_include_latlon_arrays = TRUE;
 //
 // Type: boolean
 
-netcdf_output_mdv_attributes = FALSE;
+netcdf_output_mdv_attributes = TRUE;
 
 ///////////// netcdf_output_mdv_chunks ////////////////
 //
@@ -1967,7 +1967,7 @@ netcdf_output_mdv_attributes = FALSE;
 //
 // Type: boolean
 
-netcdf_output_mdv_chunks = FALSE;
+netcdf_output_mdv_chunks = TRUE;
 
 ///////////// ncf_title ///////////////////////////////
 //
