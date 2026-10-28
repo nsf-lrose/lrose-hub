@@ -353,7 +353,7 @@ low_dbz_threshold = 35;
 //
 // Type: double
 
-high_dbz_threshold = 70;
+high_dbz_threshold = 80;
 
 ///////////// min_grid_overlap ////////////////////////
 //
@@ -378,7 +378,7 @@ min_grid_overlap = 1;
 //
 // Type: boolean
 
-set_dbz_threshold_for_tops = TRUE;
+set_dbz_threshold_for_tops = FALSE;
 
 ///////////// tops_dbz_threshold //////////////////////
 //
@@ -709,7 +709,7 @@ convection_finder_output_url = "mdv/convection";
 //
 // Type: boolean
 
-use_dual_threshold = TRUE;
+use_dual_threshold = FALSE;
 
 ///////////// dual_threshold //////////////////////////
 //
@@ -779,7 +779,7 @@ dual_threshold_url = "mdv/dual_threshold";
 //
 // Type: double
 
-base_threshold = 1.0;
+base_threshold = 3.5;
 
 ///////////// top_threshold ///////////////////////////
 //
@@ -790,7 +790,7 @@ base_threshold = 1.0;
 //
 // Type: double
 
-top_threshold = 20;
+top_threshold = 30;
 
 ///////////// min_storm_size //////////////////////////
 //
